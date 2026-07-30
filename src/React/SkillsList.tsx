@@ -63,7 +63,7 @@ const SkillsList = () => {
   };
 
   return (
-    <div className="text-left pt-4 md:pt-9">
+    <div className="text-left pt-2 md:pt-4">
       <h3 className="text-[var(--white)] text-3xl md:text-4xl font-semibold md:mb-6">
         What I do?
       </h3>
