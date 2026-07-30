@@ -1,0 +1,125 @@
+---
+interface Experience {
+  role: string;
+  company: string;
+  location: string;
+  dates: string;
+  highlights: string[];
+  tags: string[];
+}
+
+const experiences: Experience[] = [
+  {
+    role: "Software Engineer Intern",
+    company: "OpenText",
+    location: "Waterloo, ON",
+    dates: "May 2026 – Present",
+    highlights: [
+      "Deploying a Rust log-parsing binary on AWS Lambda, triggered via S3 events, reducing LLM cold start latency from 36 min to 23s with a projected $7k/month in cloud savings",
+    ],
+    tags: ["Rust", "AWS Lambda", "S3"],
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "Sun Life",
+    location: "Toronto, ON",
+    dates: "Jan 2025 – Apr 2025",
+    highlights: [
+      "Implemented Kubernetes pod and resource quotas across namespaces using Helm and Kustomize, reducing compute costs and overprovisioning by 30%",
+      "Setup infrastructure and IAM roles for ECR lifecycle policies using Terraform, saving $1000/month in server costs",
+      "Built a containerized Go consumer ingesting Snyk vulnerability findings from a Kafka event stream, enforcing security gates that block vulnerable merges in 500+ PRs/month",
+    ],
+    tags: ["Kubernetes", "Helm", "Terraform", "Go", "Kafka"],
+  },
+  {
+    role: "ML Infrastructure Engineer",
+    company: "WAT.ai",
+    location: "Waterloo, ON",
+    dates: "Sept 2023 – Feb 2025",
+    highlights: [
+      "Improved data pipeline efficiency by 40% via GitHub Actions by automating preprocessing of raw data into vectorized format using Python and Pandas",
+      "Exposed wildfire model as a REST API via AWS API Gateway and Lambda, returning zone-level burn forecasts for 36 regions",
+    ],
+    tags: ["Python", "Pandas", "AWS", "GitHub Actions"],
+  },
+  {
+    role: "Platform Engineer Intern",
+    company: "Questrade",
+    location: "Toronto, ON",
+    dates: "Jan 2024 – Apr 2024",
+    highlights: [
+      "Orchestrated DAGs in Apache Airflow via GCP Composer to validate data integrity between staging and production BigQuery datasets nightly, reducing data quality issues by 60%",
+      "Deployed a Kafka cluster to a production environment through Harness, using Kubernetes, Helm, and Makefiles",
+      "Developed an RBAC system using Django REST API endpoints and a CLI tool, enhancing system security and streamlining user role management",
+    ],
+    tags: ["Airflow", "GCP", "BigQuery", "Kafka", "Django"],
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "Royal Bank of Canada",
+    location: "Toronto, ON",
+    dates: "May 2023 – Aug 2023",
+    highlights: [
+      "Spearheaded a project to clone and manage AWS Terraform policies by building CI/CD pipelines with Jenkins, with automated testing for security compliance",
+      "Wrote a Bash script that scrapes SCCM, dispatching weekly server health digests over SMTP, reducing task time by 90%",
+    ],
+    tags: ["Terraform", "Jenkins", "AWS", "Bash"],
+  },
+];
+---
+
+<section
+  id="experience"
+  class="py-12 border-t border-[#ffffff10] text-[var(--white)]"
+>
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">Where I've been</h2>
+    <h3 class="text-4xl md:text-5xl font-medium mb-8">Experience</h3>
+
+    <div class="relative">
+      <div
+        class="absolute left-[7px] top-2 bottom-2 w-px bg-[var(--white-icon-tr)] hidden md:block"
+      >
+      </div>
+
+      <div class="space-y-6">
+        {
+          experiences.map((exp) => (
+            <div class="relative md:pl-10">
+              <span class="absolute left-0 top-7 size-[15px] rounded-full border border-[var(--sec)] bg-[var(--background)] hidden md:block" />
+              <div class="border border-1 border-[var(--white-icon-tr)] rounded-2xl bg-[#1414149c] p-5 md:p-6 hover:bg-[#ffffff08] transition duration-300 ease-in-out">
+                <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-1">
+                  <h4 class="text-xl md:text-2xl font-semibold">
+                    {exp.role}
+                    <span class="text-[var(--sec)]"> @ {exp.company}</span>
+                  </h4>
+                  <span class="text-sm text-[var(--white-icon)] whitespace-nowrap">
+                    {exp.dates}
+                  </span>
+                </div>
+                <p class="text-sm text-[var(--white-icon)] mb-4">
+                  {exp.location}
+                </p>
+                <ul class="space-y-2 mb-4">
+                  {exp.highlights.map((point) => (
+                    <li class="flex gap-3 text-sm md:text-base text-neutral-300">
+                      <span class="text-[var(--sec)] mt-1">▹</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                  {exp.tags.map((tag) => (
+                    <span class="text-xs text-[var(--white-icon)] border border-[var(--white-icon-tr)] rounded-full px-3 py-1 bg-[#1414149c]">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
