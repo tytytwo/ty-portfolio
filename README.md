@@ -9,7 +9,7 @@
 
 2. **Clone My Repository**  
 ```bash 
-git clone git@github.com:pacman-ty/ty-portfolio.git
+git clone git@github.com:tytytwo/ty-portfolio.git
 ```
 <br>
 
