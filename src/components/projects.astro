@@ -1,40 +1,44 @@
 ---
 import { Image } from "astro:assets";
 import chess from "../../public/chess.jpg";
-import api1 from "../../public/api1.jpg";
-import website from "../../public/website.png";
-import dotfiles from "../../public/dotfiles.png";
+import logram from "../../public/logram.png";
+import pkgm from "../../public/package_manager.png";
+import cnn from "../../public/cnn.jpg";
 
 interface Project {
   title: string;
   image: ImageMetadata;
   link: string;
   status: string;
+  status: string;
+  language: string;
 }
 
 const projects: Project[] = [
+  {
+    title: "CUDA CNN Accelerator",
+    image: cnn as ImageMetadata,
+    link: "https://github.com/pacman-ty/cuda-cnn-accelerator"
+    status: "Solo Contributer",
+    status: "Rust",
+  },
   {
     title: "Chess Engine",
     image: chess as ImageMetadata,
     link: "https://github.com/pacman-ty/chess-engine",
     status: "Contributor",
+    language: "C++",
   },
   {
-    title: "Social Media API",
-    image: api1 as ImageMetadata,
-    link: "https://github.com/pacman-ty/social-media-api",
+    title: "Package Manager",
+    image: pkgm as ImageMetadata,
+    link: "https://github.com/pacman-ty/package-manager"
     status: "Solo Contributer",
   },
   {
-    title: "Personal Website",
-    image: website as ImageMetadata,
-    link: "https://github.com/pacman-ty/ty-portfolio",
-    status: "Solo Contributer",
-  },
-  {
-    title: "Dotfiles",
-    image: dotfiles as ImageMetadata,
-    link: "https://github.com/pacman-ty/dotfiles",
+    title: "Parallel Logram",
+    image: logram as ImageMetadata,
+    link: "https://github.com/pacman-ty/parallel-logram"
     status: "Solo Contributer",
   },
 ];
